@@ -5,6 +5,7 @@
 Links about Flask: 
 * Kind of followed this ![tutorial](https://openclassrooms.com/fr/courses/4425066-concevez-un-site-avec-flask/4525912-ajoutez-une-nouvelle-table-dans-la-base-de-donnees)
 * In case we use SQLAchemy ![here](https://docs.sqlalchemy.org/en/14/orm/mapping_styles.html#declarative-mapping) is the documentation
+* Cheat ![sheet](https://github.com/lucrae/flask-cheat-sheet)  
 
 - - - -
 
