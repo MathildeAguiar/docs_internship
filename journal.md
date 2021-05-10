@@ -20,7 +20,7 @@ The back-end side is the "teacher's side" where they can decide the parameters o
 **TO DO THIS WEEK** 
 
 - [ ] Initialize the Trello board
-- [ ] Do the ![OpenClassroom's](https://openclassrooms.com/fr/courses/4425066-concevez-un-site-avec-flask/) tutorial on Flask
+- [ ] Do the ![OpenClassroom's](https://openclassrooms.com/fr/courses/4425066-concevez-un-site-avec-flask/) tutorial on Flask. My repo is ![here](https://github.com/MathildeAguiar/FlaskTutorial)
 
 
 
