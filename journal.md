@@ -30,6 +30,17 @@ Part 1 of the tutorial is done.
 
 ### 11/05/21:
 
+* I keep following the OC Falsk tutorial. I almost finished reading it all (except the chapter dedicated to Facebook and the last 2 ones). 
+* I created the website up to chapter "découpez votre projet en templates". However it's still messy and need to be cleaned up.
+
+---
+
+**TO DO TOMORROW** 
+
+- [ ] Finish the website dev according to the OC tutorial and use all the facebook features she displays on the tutorial.
+- [ ] Fill up the Trello. 
+- [ ] Think about a generic website model that could fit our project and start to build up the architecture.
+
 ### 12/05/21:
 
 ### 14/05/21:
