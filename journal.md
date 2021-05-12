@@ -43,4 +43,7 @@ Part 1 of the tutorial is done.
 
 ### 12/05/21:
 
+* I decided to start again from the beginning the coding of the OC tutorial's website. I cleaned up the code and encountered a few (stupid) bugs. I just need to set up all the facebook stuff and it will be done. 
+
+
 ### 14/05/21:
