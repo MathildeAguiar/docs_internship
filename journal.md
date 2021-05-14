@@ -46,4 +46,24 @@ Part 1 of the tutorial is done.
 * I decided to start again from the beginning the coding of the OC tutorial's website. I cleaned up the code and encountered a few (stupid) bugs. I just need to set up all the facebook stuff and it will be done. 
 
 
+### 13/05/21: 
+*holiday but couldn't help to touch the code*
+
+* Added a few changes to the new website version. 
+* Found out that the facebook authentification couldn't be done because of non https adresses that no longer supported. However, specified in the FB documentation localhost should work anyway. Still trying to figure out this bug. This thing keeps me from testing my full website which is really frustrating. 
+ 
 ### 14/05/21:
+
+**TO DO TODAY** 
+
+- [ ] Finally filling up that Trello and watch vids/read docs about how Kanban really works
+- [ ] Still looking for the fb authentification bug
+- [ ] Sketch a new website interface 
+
+--- 
+Facebook **troubleshooting** :
+Facebook only works with https URL since 2018. However my Flask application uses the classical http form of the localhost. I need to enable the https version of my local host. To do so I found a solution ![here](https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https). To sum up I just need to change the **app.run()** in my run.py file and add the argument **ssl_context='adhoc'** . However, with just this argument we have a security problem message from the web browser. To solve this problem we can generate a self-signed certificate with openssl. Use the command: `openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365`
+Then modify again the **app.run()** args with:
+`ssl_context=('cert.pem', 'key.pem')`
+
+Well, it seems to not work well for now. I still have the same URL problems.
