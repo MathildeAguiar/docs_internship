@@ -67,3 +67,18 @@ Then modify again the **app.run()** args with:
 `ssl_context=('cert.pem', 'key.pem')`
 
 Well, it seems to not work well for now. I still have the same URL problems.
+
+### 17/05/21:
+
+I read the doc about Flask-WTF, bootstrap-flask and SQLite. I used the sample SQLite ![database](https://www.sqlitetutorial.net/sqlite-sample-database/) to develop a little website where you fill up a form (using flask-wtf) that can browse through the sqlite sample database. I used the following ![tutorial](https://hackersandslackers.com/flask-wtforms-forms/) for the wtf form. 
+So far, I did the form, howerver the sql queries are still missing. I must finish to set up the whole database (sqlachemy part) and write the queries.   
+I must set up the bootstrap part. 
+
+---
+**TO DO TOMORROW**
+
+- [ ] set up the bootstrap
+- [ ] write queries
+- [ ] finish to set up the database
+
+### 18/05/21:
