@@ -82,3 +82,6 @@ I must set up the bootstrap part.
 - [ ] finish to set up the database
 
 ### 18/05/21:
+
+Meeting with Yannick this morning. 
+The result page is fixed and the database is set up. I need to finish the queries and set up the bootstrap. 
