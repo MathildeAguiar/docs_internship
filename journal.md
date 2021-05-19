@@ -85,3 +85,10 @@ I must set up the bootstrap part.
 
 Meeting with Yannick this morning. 
 The result page is fixed and the database is set up. I need to finish the queries and set up the bootstrap. 
+
+### 19/05/21:
+
+* I set up the bootstrap Flask on my Collection de Disques website. Now we have a beautiful form.
+* I messed up with the database (I defined the database like SQLAchemy one instead of a SQLite one) so I have to redo that.
+* I made some prototypes of the ihm we want for our final application
+* I started to setch an architecture of the files needed to create the final application
