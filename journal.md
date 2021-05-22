@@ -92,3 +92,10 @@ The result page is fixed and the database is set up. I need to finish the querie
 * I messed up with the database (I defined the database like SQLAchemy one instead of a SQLite one) so I have to redo that.
 * I made some prototypes of the ihm we want for our final application
 * I started to setch an architecture of the files needed to create the final application
+
+### 20/05/21:
+
+I worked on the database again. I had troubles with the queries and the database so I worked on that part.
+
+### 21/05/21:
+The database is set and so the queries. I still have to do a few ajustments in the way it appaears on screen.
