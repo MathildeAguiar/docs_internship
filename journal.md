@@ -103,3 +103,11 @@ The database is set and so the queries. I still have to do a few ajustments in t
 ### 25/05/21:
 
 Meeting with Yannick. I showed my current version of Collection de Disques. We decided that I will keep working on this but with transposing the chinook database into what our final application could look like. 
+
+---
+
+**TO DO THIS WEEK**
+
+- [ ] Use the chinook database as a reference to keep working on the collection de disques website. Be careful on how we could use it to do a transposition to the final website.
+- [ ] Keep working on the interface sketches.
+- [ ] "Test" my interfaces on my teacher mom to see if it would be easy to use  
