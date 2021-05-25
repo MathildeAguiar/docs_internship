@@ -99,3 +99,7 @@ I worked on the database again. I had troubles with the queries and the database
 
 ### 21/05/21:
 The database is set and so the queries. I still have to do a few ajustments in the way it appaears on screen.
+
+### 25/05/21:
+
+Meeting with Yannick. I showed my current version of Collection de Disques. We decided that I will keep working on this but with transposing the chinook database into what our final application could look like. 
