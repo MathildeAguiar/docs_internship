@@ -111,3 +111,24 @@ Meeting with Yannick. I showed my current version of Collection de Disques. We d
 - [ ] Use the chinook database as a reference to keep working on the collection de disques website. Be careful on how we could use it to do a transposition to the final website.
 - [ ] Keep working on the interface sketches.
 - [ ] "Test" my interfaces on my teacher mom to see if it would be easy to use  
+
+* I transposed the chinook database for our use with teachers. 
+* I sketch 2 more interfaces. 
+
+*I forgot to update it here oops*
+
+### 26/05/21:
+
+* I started working on the bootstrap part. I tried different options but I still struggle to get what I want. 
+* I added new queries corresponding to some teacher's needs. I want to display the results in a table using **render_table()** from bootstrap flask. However I still need to manage it properly.
+
+### 27/05/21:
+
+* I changed some things in my mock-ups. I added some few animations. Almost all the mock-usps first version are ready to get tested by the teacher.
+* Still managing the way bootstrap side navs are displayed.
+
+### 28/05/21:
+
+* I cleaned the code with a better architecture.
+* I'm still trying to display the bootstrap the way I want with using at most the bootstrap flask.
+* I finished the first animated/linked version of the mock-ups. Testing them on the teacher this Sunday.
