@@ -132,3 +132,9 @@ Meeting with Yannick. I showed my current version of Collection de Disques. We d
 * I cleaned the code with a better architecture.
 * I'm still trying to display the bootstrap the way I want with using at most the bootstrap flask.
 * I finished the first animated/linked version of the mock-ups. Testing them on the teacher this Sunday.
+
+### 31/05/21:
+
+* I changed some queries and I displayed the results in better shape than before.
+* I tried different ways to use bootstrap.
+* I had feedback from the teacher yesterday. I did a few adjustments to the mock-ups. 
