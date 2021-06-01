@@ -138,3 +138,11 @@ Meeting with Yannick. I showed my current version of Collection de Disques. We d
 * I changed some queries and I displayed the results in better shape than before.
 * I tried different ways to use bootstrap.
 * I had feedback from the teacher yesterday. I did a few adjustments to the mock-ups. 
+
+### 1/06/21:
+
+Meeting with Yannick. We discussed about some adjustments about the future interface. We decided that I will be doing the following work this week:
+- [ ] From the previous search form that I did on chinook, design a search form where the teacher could look for "anything" they want, a free search form.
+- [ ] Design the questions validation interface with a table where we could modify/approve/disapprove the question found by our engine.
+- [ ] Design the interface for the exercise editing.
+
