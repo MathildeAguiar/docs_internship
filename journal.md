@@ -146,3 +146,4 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 - [ ] Design the questions validation interface with a table where we could modify/approve/disapprove the question found by our engine.
 - [ ] Design the interface for the exercise editing.
 
+* I finished creating my base (header/footer/nav) for all pages. Finally clean! 
