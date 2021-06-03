@@ -147,3 +147,6 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 - [ ] Design the interface for the exercise editing.
 
 * I finished creating my base (header/footer/nav) for all pages. Finally clean! 
+
+### 2/06/21:
+* I created the different forms and pages needed. I still have to improve the overall aspect but we have a nice base. I am waiting for the database extract to continue to work.  
