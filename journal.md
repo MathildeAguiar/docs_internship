@@ -150,3 +150,20 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 
 ### 2/06/21:
 * I created the different forms and pages needed. I still have to improve the overall aspect but we have a nice base. I am waiting for the database extract to continue to work.  
+
+### 03/06/21:
+* I receive the database extract but I didn't really started working with it. I fixed some issues on the bootstrap aspect. 
+* There is still a problem remaining with the use of some incons with render_icon from bootstrap flask. I think I'll need to get them with the svg or something.
+
+### 04/06/21:
+* I started initializing the database with some data I wrote really basic queries. 
+* I hard a hard time with circular imports. I'm still troubleshooting it which is really annoying because I can't test anything.
+
+### 07/06/21:
+* I fixed the circular import porblem!! I can test now! 
+* I changed the notions validation page aspect
+* I fixed some queries for the exercice creation page
+* I'm working on the "search anything" query 
+* I have nice tables displaying the results of my queries 
+* I still need to clean the code and change for dynamic select fields in the forms 
+
