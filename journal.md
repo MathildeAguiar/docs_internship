@@ -167,3 +167,12 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * I have nice tables displaying the results of my queries 
 * I still need to clean the code and change for dynamic select fields in the forms 
 
+### 08/06/21:
+* Meeting with Yannick : we dicussed about some details, he explained me some aspects I didn't catch up well and I presented him my current work.
+* I fixed some visual/bootstrap problems. I have a much cleaner and responsive interface now. 
+* I still have to deal with the navigation and the languages/translations of pages. I looked up for Babel Flask 
+
+### 09/06/21:
+* I created some dynamic choices fields with mockup values. I still have to refine the database to match the exact categories needed in the forms' fields.
+* I drafted some new tables for the database but I didn't displayed them in the code yet. 
+* I coded queries for the home page and a category field to fine-tune the research. I'm still not satisfied with it yet, I would like a checkbox visual instead of a list but for now I get a messy result. 
