@@ -176,3 +176,25 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * I created some dynamic choices fields with mockup values. I still have to refine the database to match the exact categories needed in the forms' fields.
 * I drafted some new tables for the database but I didn't displayed them in the code yet. 
 * I coded queries for the home page and a category field to fine-tune the research. I'm still not satisfied with it yet, I would like a checkbox visual instead of a list but for now I get a messy result. 
+
+### 10/06/21:
+* I changed the queries but it's still messy. 
+* I tested a way of dsplaying CheckBoxes for choices. 
+* I tested to change the query for the home page with adding a LIKE feature. 
+
+### 11/06/21: 
+* I tested Babel Flask on a small website to understand how it works. 
+* I started dealing with the effect on click for displaying the notions 
+
+
+## 14/06/20:
+* Meeting with Yanick: I have to redesign my own version of the database. I will also set up the Babel Flask in English.  
+**TO DO THIS WEEK**
+
+- [ ] Redesign the whole database 
+- [ ] Populate the new database 
+- [ ] Rewrite all my queries according to this new database
+- [ ] Translate in english with Babel Flask
+
+
+
