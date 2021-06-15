@@ -187,7 +187,7 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * I started dealing with the effect on click for displaying the notions 
 
 
-## 14/06/20:
+## 14/06/21:
 * Meeting with Yanick: I have to redesign my own version of the database. I will also set up the Babel Flask in English.  
 **TO DO THIS WEEK**
 
@@ -196,5 +196,7 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 - [ ] Rewrite all my queries according to this new database
 - [ ] Translate in english with Babel Flask
 
-
+### 15/06/21:
+* I sketch the new database configuration (still some improvments needed)
+* Coding the new database tables with SQLAlchemy
 
