@@ -200,3 +200,7 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * I sketch the new database configuration (still some improvments needed)
 * Coding the new database tables with SQLAlchemy
 
+### 16/06/21:
+* Populated the database with some data I extracted from the previous Nicolas' database.
+* Troubleshooting the issues coming from the new database configuration and adapting my old queries to this new db.  
+* Fixing some visual details. 
