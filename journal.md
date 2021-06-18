@@ -209,3 +209,6 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * Modified the side nav with dynamism of the chapters avaible (still have to link it to the user session but I'll see that part later)
 * Fixing some queries. All queries written since today works perfectly fine ! 
 * Adding dynamism for the list of exercices shown in function of which chapter they're related to. *Still working on this*
+
+### 18/07/21:
+* I fixed my side nav and I even created the "groupes" and "Aide" pages. Now all elements in my side nav works great. 
