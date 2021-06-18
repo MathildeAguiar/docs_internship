@@ -204,3 +204,8 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * Populated the database with some data I extracted from the previous Nicolas' database.
 * Troubleshooting the issues coming from the new database configuration and adapting my old queries to this new db.  
 * Fixing some visual details. 
+
+### 17/06/21:
+* Modified the side nav with dynamism of the chapters avaible (still have to link it to the user session but I'll see that part later)
+* Fixing some queries. All queries written since today works perfectly fine ! 
+* Adding dynamism for the list of exercices shown in function of which chapter they're related to. *Still working on this*
