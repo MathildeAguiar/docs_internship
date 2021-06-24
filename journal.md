@@ -210,5 +210,19 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * Fixing some queries. All queries written since today works perfectly fine ! 
 * Adding dynamism for the list of exercices shown in function of which chapter they're related to. *Still working on this*
 
-### 18/07/21:
+### 18/06/21:
 * I fixed my side nav and I even created the "groupes" and "Aide" pages. Now all elements in my side nav works great. 
+
+### 21/06/21: 
+* Fixes of some bugs and cleaned a bit the code
+
+### 22/06/21:
+* Meeting with Yannick : we idscussed about the database and what to keep/change/remove. Looked at the interfaces.
+
+### 23/06/21:
+* Starting correcting the database composition. Correcting the queries in consequence.
+
+### 24/06/21: 
+* Still working on the database structure but I'm still struggling to make some choices in its configuration. 
+* Changed some forms and associated queries. 
+* Did some queries for editing/deleting a notion on the validation page but until the db is unstable it's not quite efficient.
