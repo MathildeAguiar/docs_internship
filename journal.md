@@ -226,3 +226,8 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * Still working on the database structure but I'm still struggling to make some choices in its configuration. 
 * Changed some forms and associated queries. 
 * Did some queries for editing/deleting a notion on the validation page but until the db is unstable it's not quite efficient.
+
+### 25/06/21: 
+* I changed quite a few details in the existing interfaces. Added a dashboard to the home page to access more easialy to all pages. 
+* I added a page to create some exercices sessions. 
+* I'm starting to visualize the overall of the website pages which makes it easier to refine my database configuration !  
