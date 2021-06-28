@@ -231,3 +231,6 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 * I changed quite a few details in the existing interfaces. Added a dashboard to the home page to access more easialy to all pages. 
 * I added a page to create some exercices sessions. 
 * I'm starting to visualize the overall of the website pages which makes it easier to refine my database configuration !  
+
+### 28/06/21:
+* I keep correcting the database configuration. I still don't know if this configuration is great but I'm trying to find something correct.  
