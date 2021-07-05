@@ -234,3 +234,16 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 
 ### 28/06/21:
 * I keep correcting the database configuration. I still don't know if this configuration is great but I'm trying to find something correct.  
+
+### 29/06/21:
+* Meeting with Yannick we discussed about the database again. We changed a few things and he mainly agreed on my actual configuration. 
+* I changed some details in the db implementation thanks to Yannick's suggestions.
+
+### From 30/06/21 to 02/07/21:
+* I debugged the problems that came from the things I changed in the db implementation. 
+* I started brainstorming an interface where the teacher can manage the student's results to exercises sessions and chapters. Still in progress. 
+* I changed some details in the forms previously created and some other details in other interfaces. 
+
+### 05/07/21:
+* Creating new queries for addind/modifying/deleting sessions/chapters/exercises. The difficulty stands in managing correctly many to many relationships.
+* Finish the design of the students' results/progress interface.
