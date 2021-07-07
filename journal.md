@@ -247,3 +247,7 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 ### 05/07/21:
 * Creating new queries for addind/modifying/deleting sessions/chapters/exercises. The difficulty stands in managing correctly many to many relationships.
 * Finish the design of the students' results/progress interface.
+
+### 06/07/21:
+* Corrected some queries (creation chapter/exercise/session) and modified some URL paths. However it's still buggy sometimes. I need to work on it again.
+* I coded the first aspect of the student's results dashboard and did the queries. I still need to improve this concept.  
