@@ -251,3 +251,28 @@ Meeting with Yannick. We discussed about some adjustments about the future inter
 ### 06/07/21:
 * Corrected some queries (creation chapter/exercise/session) and modified some URL paths. However it's still buggy sometimes. I need to work on it again.
 * I coded the first aspect of the student's results dashboard and did the queries. I still need to improve this concept.  
+
+### 07/07/21:
+* I keep coding a first version on the students' results dashboard and management. I want to present it to Yannick at tomorrow's meeting.
+* I corrected some minor bugs to have a kinda clean interface for tomorrow
+
+### 08/07/21:
+**Meeting with Yannick** 
+* We talked about the interfaces look and he suggested me some improvments and gave me some nice ideas !
+* We talked about the final report 
+* We talked about the NLP part of the project. We still don't know what I will work on exactly but we thought about a task of topic labeling/relationship extraction
+
+### 09/07/21:
+I changed some things according to yesterday's meeting : 
+* I added a slider to choose the limited time in the exercises creation form.
+* I started to do the documentation using PDoc. Still not having the result I want. 
+* I added a rich text field where the user can highlight/ change color etc for the 'summary' part in chapter creation form. However I don't like the way it's displayed on the 'list of..' tables (rendered as raw HTML). 
+* I started handling files paths in the database for the chapters if the user wants to illustrate a chapter with images/videos/etc. 
+
+### 12/07/21:
+* I changed some minor details 
+* I brainstormed the students' management interface.
+
+### 13/07/21:
+* I changed the tables looks with having more useful information on these. I didn't need to use 'Vues' as suggested by Yannick.
+* I found out the way to prepopulate a form. Now the interfaces of modification of assignments/chapter/exos works. However the changes don't really apply to the database side! I must correct that point.   
