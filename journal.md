@@ -276,3 +276,8 @@ I changed some things according to yesterday's meeting :
 ### 13/07/21:
 * I changed the tables looks with having more useful information on these. I didn't need to use 'Vues' as suggested by Yannick.
 * I found out the way to prepopulate a form. Now the interfaces of modification of assignments/chapter/exos works. However the changes don't really apply to the database side! I must correct that point.   
+
+### 15/07/21:
+* I finished correcting the problems with modifying existing objects. I works great!
+* I changed some things in the students' management interfaces. I'm still struggling to find somethings great for the interface that will display all the work done by one student. I'm trying to think about something not too basic and plain. 
+* I changed some small details in the "validation" interface (table's headlines).
