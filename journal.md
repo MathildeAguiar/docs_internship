@@ -281,3 +281,22 @@ I changed some things according to yesterday's meeting :
 * I finished correcting the problems with modifying existing objects. I works great!
 * I changed some things in the students' management interfaces. I'm still struggling to find somethings great for the interface that will display all the work done by one student. I'm trying to think about something not too basic and plain. 
 * I changed some small details in the "validation" interface (table's headlines).
+
+### 16/07/21 :
+Meeting with Yannick.
+* We discussed about the last interface : the dashboard of one student. We agreed on using a dynamic graph on the student's results to assignments. Also a list of their done assignments. And more details. 
+* We talked about the NLP part. I'll be trying to do a model to do some topic labelling. The goal of the model is to label interesting ressources (books, articles, newpapers) and tackle which topics is the document about and thanks to those we could have multi labeled documents. This part is still a bit not clear to me but my priority is to finish the Web part and then start to prepare a dataset for my model. 
+* Yannick gave me the slides from the TAL Master to learn about how to create my dataset for the model and many more. I'll study that. 
+
+### 19/07/21 : 
+* I changed some details we talked about at the last meeting (assignment codes, updated the bootstrap flask version, created some repr() overrides for some objects in the db, etc.)
+* I started working with Bokeh to create a graph for the student's results. Still working on the way to embed it properly. 
+* I created a Table in the database for the file handling in the chapter creation.
+
+### 20/07/21 : 
+* I took a break from the Web part. I read the HuggingFace course (part 1). Explored some models.
+* Read the doc about Bokeh again and some interesting examples to take inspiration from.
+
+### 21/07/21 : 
+* I read Yannick's course on Web scrapping. I'm starting to see how to proceed to create a little dataset to train my model on. 
+* I worked on my report.
