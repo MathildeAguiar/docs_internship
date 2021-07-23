@@ -300,3 +300,11 @@ Meeting with Yannick.
 ### 21/07/21 : 
 * I read Yannick's course on Web scrapping. I'm starting to see how to proceed to create a little dataset to train my model on. 
 * I worked on my report.
+
+### 22/07/21 : 
+* I worked on some problems in the 'validation' page. Now we can delete a notion related to a text and we can modify a notion (I'm not quite sure if it's great or not)
+* I worked on my report again. 
+
+### 23/07/21 : 
+* I coded the 'student results' interface but I'm still missing the Bokeh graph 
+* I wroked on my report again
