@@ -308,3 +308,14 @@ Meeting with Yannick.
 ### 23/07/21 : 
 * I coded the 'student results' interface but I'm still missing the Bokeh graph 
 * I wroked on my report again
+
+### 26/07/21 :
+* Itried to render the db errors in something pleasant for the user.
+* I worked on the student's dashboard. I had new little ideas.
+* I read the hugging face course again.
+
+### 27/07/21 :
+* Bokeh works ! I can display the student's result in a graph but since I don't have much data I did a mock set of results that just doesn't make much sense.
+* I read the hugging face course again. I will finish the first big part tomorrow I think. 
+
+### 28/07/21 :
