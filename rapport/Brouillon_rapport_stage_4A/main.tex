@@ -237,12 +237,12 @@ Pour cette partie je n'avais pas un niveau d'exigence en terme de résultats. Je
 Tout d'abord il a fallu définir notre problématique et les résultats souhaités de la part de notre modèle. On a décidé de créer un modèle qui serait capable de \textbf{labéliser des textes et d'en extraire les sujets principaux.} \\
 
 Pour cela je me suis organisée comme ceci-ci : \\
-J'ai d'abord dû rassembler des ressources pertinentes pour mon autoformation. Je me suis appuyée sur des cours dispensés par M.Parmentier et certaines de ses collègues dans le cadre du master TAL. J'ai également décidé d'utiliser les Transformers (librairies) développées par Hugging Face, j'ai donc suivi les cours créés par les développeurs de Hugging Face. J'ai également revu les cours et TP réalisés en cours de Communication Langagière au S8. \\
+J'ai d'abord dû rassembler des ressources pertinentes pour mon auto-formation. Je me suis appuyée sur des cours dispensés par M.Parmentier et certaines de ses collègues dans le cadre du Master TAL. J'ai également décidé d'utiliser les Transformers (librairies) développées par Hugging Face, j'ai donc suivi les cours créés par les développeurs de Hugging Face. J'ai également revu les cours et TP réalisés en cours de Communication Langagière au S8. \\
 
 Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cette partie en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutemberg. \textbf{PLUS DE DETAILS, lib, etc}. 
 J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper SPARQL. \textbf{PLUS DE DÉTAILS}. \\
 
-Après avoir lu les cours de Hugging Face j'ai eu une meilleure vision de la façon de procéder. J'ai tout d'abord commencé à explorer les modèles disponibles sur le Hub de Hugging Face \textbf{LINK TO DISPLAY HERE}. Notre tâche à réaliser est du \textit{topic labelling}, pour se faire il faut utiliser un modèle à \textbf{encodeur unique.} 
+Après avoir lu les cours de Hugging Face j'ai eu une meilleure vision de la façon de procéder. J'ai tout d'abord commencé à explorer les modèles disponibles sur le Hub de Hugging Face \textbf{LINK TO DISPLAY HERE}. Notre tâche à réaliser est du \textit{topic modelling}, pour se faire il faut utiliser un modèle à \textbf{encodeur unique.} 
 
 
 
@@ -263,7 +263,7 @@ Une interface a été plus compliquée à imaginer et à coder que les autres, l
 
 \textbf{L'analyse des textes :}  Compte tenu de la date de rendu de ce rapport, je n'ai pas fini de travailler sur la partie NLP. De plus, cette partie est plus compliquée à appréhender pour moi et nous ne sommes pas sûrs d'obtenir des résultats satisfaisants à la date de fin de mon stage. \\
 
-\textbf{Avoir un retour "utilisateur" :} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa failité d'utilisation. 
+\textbf{Avoir un retour "utilisateur" :} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa facilité d'utilisation. 
 Un autre point intéressant à aborder serait que notre interface soit utilisable par le plus grand nombre, par conséquent qu'elle comporte des modules \textit{d'accessibilité} (pour les malvoyants par exemple). 
 
 
@@ -283,11 +283,12 @@ Je remercie également M.Parmentier de m'avoir fait découvrir de  nombreuses re
 
 \subsubsection{Capacité à mettre en place des dispositifs expérimentaux :}
 
-Pour la partie "recherche" de mon stage j'ai dû mettre en place une stratégie pour obtenir des résultats satisfaisants. 
-
-J'ai commencé par écrire des petits tests simples pour tester les différents modèles de Hugging Face et voir ceux qui seront adaptés pour réaliser notre tâche. J'ai utilisé les \textbf{pipelines()} de Hugging Face pour voir comment leur modèles peuvent résoudre les tâches courantes de NLP. 
-
-Etapes 
+Pour la partie "recherche" de mon stage j'ai dû mettre en place un dispositif expérimental. Pour mener à bien ma mission je me suis organisée selon les étapes suivantes. \\
+Tout d'abord moi et mon tuteur avons commencé par définir l'objectif de notre modèle et les résultats attendus par celui-ci. \\
+Ensuite j'ai recherché des ressources pour pouvoir m'auto-former et comprendre mon sujet. \\
+Une fois avoir lu et compris ses ressources j'ai pu savoir quelles étapes je devais réaliser. \\
+Avant de me lancer dans le projet final j'ai exploré les 2 grosses librairies que j'allais utiliser. J'ai écrit des petites requêtes en SPARQL et j'ai récupéré des contenus de pages Wikipedia. J'ai également  écrit des petits tests simples pour tester les différents modèles de Hugging Face et voir ceux qui seront adaptés pour réaliser notre tâche. J'ai utilisé les \textbf{pipelines()} de Hugging Face pour voir comment leur modèles peuvent résoudre les tâches courantes de NLP. \\
+Une fois à l'aise j'ai enfin pu passer au modèle final. J'ai donc procédé par étapes :
 
 \begin{itemize}
     \item Constitution du dataset : web scrapping sur WikiData et Gutenberg
@@ -296,9 +297,19 @@ Etapes
     
     \item Tokenization : j'utilise le tokenizer de Hugging Face pour que nos données soient exploitables par notre modèle. 
     
+    \item Mise en batch (groupe de données) pour les étapes d'entraînement, de validation et de test.
+    
     \item Définition des paramètres d'entraînement. 
+    
+    \item Entraînement du modèle (fine-tuning).
+    
+    \item Phase de test, où l'on donne au modèle des données jamais rencontrées.
+    
+    \item Analyse des résultats obtenus. 
+    
 \end{itemize}
 
+Une fois nos tests réalisés une première fois on regarde les résultats obtenus par le modèle. Le premier essai n'étant pas satisfaisant on fait varier les paramètres de notre modèle. On peut aussi modifier le jeu de données utilisé pour le fine-tuning de notre modèle. 
 
 \newpage
 
