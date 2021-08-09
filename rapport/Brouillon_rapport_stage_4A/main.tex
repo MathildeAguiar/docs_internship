@@ -104,6 +104,15 @@ Personnellement, j’ai eu la chance d’intégrer l’équipe SyNaLP (Symbolic 
 \end{figure}
 
 
+\subsection{L'exerciseur Métal :}
+
+L'exerciseur Métal a pour but d'assister les professeurs de langues ou lettres dans la réalisation d'exercices et de matériels de cours. La plateforme sera accessible à la fois par des enseignants mais également par des élèves. \\
+Du côté élève, ils ont accès aux chapitres de cours, aux sessions d'exercices préparés par leurs enseignants ainsi qu'à leurs résultats. \\
+Du côté enseignant, chaque professeur pourra utiliser l'analyseur de textes pour auto-générer des questions qui serviront dans les exercices à donner aux élèves. Cet analyseur va prendre un texte, choisi par l'enseignant, en entrée et va retourner des notions grammaticales extraites du texte. À partir de ces notions l'analyseur propose des questions traitant ces dernières. L'enseignant aura pour rôle de valider ou non la véracité des questions générées par l'analyseur. Il existe actuellement 3 types de questions : les textes à trous, les "vrai/faux" et les questions où l'élève doit sur-ligner le bon élément dans la phrase. 
+Une fois les questions validées, l'enseignant peut les utiliser pour constituer des exercices. Les exercices sont en réalité une collection de questions traitant d'une notion grammaticale. L'enseignant peut également choisir d'imposer un temps imparti pour la réalisation d'un exercice.
+L'enseignant peut créer une session d'exercices qui sera une collection d'exercices à donner en devoir à un ou plusieurs groupes d'élèves.
+Les enseignants peuvent également créer des chapitres auxquels seront associés des exercices, des notions grammaticales abordées, des fichiers choisis par l'enseignant, un résumé/des commentaires sur le contenu du chapitre et un ou des groupes d'élèves.
+
 \subsection{Objectifs du stage :}
 
 Mon stage porte sur le développement d’une plateforme en ligne d’aide à l’apprentissage des langues. Cette plateforme est en partie financée par l’académie de Nancy-Metz. Le but de cette plateforme est d’offrir à un enseignant un espace où il peut à la fois créer du matériel d'apprentissage facilement mais aussi assurer un suivi de ses élèves. Le principe de l'exerciseur repose sur la création d'un parcours d'apprentissage (chapitres et sessions d'exercices) se basant sur des exercices comportant des questions auto générées par notre modèle de traitement de textes. En effet, ce dernier sera capable d'extraire des notions grammaticales de textes choisis par l'enseignant et d'auto générer des questions correspondant à ses notions grammaticales. 
@@ -149,7 +158,7 @@ Attention ces étapes sont sujettes à changements car cette partie de mon stage
 \subsection{Organisation du travail :}
 
 J’ai travaillé en grande partie en autonomie et j’ai donc eu une liberté quasi totale sur ma façon d’organiser mon travail. M.Parmentier et moi avions des réunions hebdomadaires au laboratoire pour faire un point sur mon avancement et définir les objectifs de la semaine à venir. Durant ses réunions nous échangeons également sur la façon dont nous imaginions notre exerciseur. 
-Pour définir les tâches à réaliser j’utilisais la méthode 看板 Kanban comme vue en cours de Génie Logiciel. Pour ce faire j’utilisais Trello où j’organisais mes étiquettes en 3 colonnes : TO DO, ON GOING et DONE. J’utilisais également un code couleurs (rouge, vert, jaune) pour définir la priorité de la tâche.  \\
+Pour définir les tâches à réaliser j’utilisais la méthode Kanban comme vue en cours de Génie Logiciel. Pour ce faire j’utilisais Trello où j’organisais mes étiquettes en 3 colonnes : TO DO, ON GOING et DONE. J’utilisais également un code couleurs (rouge, vert, jaune) pour définir la priorité de la tâche.  \\
 
 \begin{figure}[h]
     \centering
@@ -239,8 +248,10 @@ Tout d'abord il a fallu définir notre problématique et les résultats souhait�
 Pour cela je me suis organisée comme ceci-ci : \\
 J'ai d'abord dû rassembler des ressources pertinentes pour mon auto-formation. Je me suis appuyée sur des cours dispensés par M.Parmentier et certaines de ses collègues dans le cadre du Master TAL. J'ai également décidé d'utiliser les Transformers (librairies) développées par Hugging Face, j'ai donc suivi les cours créés par les développeurs de Hugging Face. J'ai également revu les cours et TP réalisés en cours de Communication Langagière au S8. \\
 
-Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cette partie en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutemberg. \textbf{PLUS DE DETAILS, lib, etc}. 
-J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper SPARQL. \textbf{PLUS DE DÉTAILS}. \\
+Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cette partie en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutemberg. 
+J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper Python SPARQL. \textbf{PLUS DE DÉTAILS}. \\
+
+Une fois les données récoltées j'ai du les traiter et les rendre exploitables par notre modèle. J'ai donc commencé par 
 
 Après avoir lu les cours de Hugging Face j'ai eu une meilleure vision de la façon de procéder. J'ai tout d'abord commencé à explorer les modèles disponibles sur le Hub de Hugging Face \textbf{LINK TO DISPLAY HERE}. Notre tâche à réaliser est du \textit{topic modelling}, pour se faire il faut utiliser un modèle à \textbf{encodeur unique.} 
 
@@ -270,12 +281,12 @@ Un autre point intéressant à aborder serait que notre interface soit utilisabl
 \section{Bilan personnel :}
 
 
-Ce stage m’a permis de parfaire mes compétences en Python. Je ne savais pas qu’il était possible de coder des pages Web à l’aide de Python. Naturellement j’ai aussi pu développer mes compétences en HTML/CSS et pu approfondir mon utilisation de Bootstrap. \\
-De plus, j'ai pu développer mes capacités d'apprentissage en autonomie. En effet, je n'avais jamais utilisé Flask et les autres technologies citées plus haut et j'ai beaucoup apprėcié le fait de les apprendre par moi-même et de me les approprier. \\
+Ce stage m’a permis de parfaire mes compétences en Python et découvrir Flask. Je ne savais pas qu’il était possible de coder des pages Web à l’aide de Python. Naturellement j’ai aussi pu développer mes compétences en HTML/CSS et pu approfondir mon utilisation de Bootstrap. \\
+J'ai également pu étendre mes connaissances en traitement du langage naturel. J'ai approfondi ce que l'on avait vu en TP de Communication Langagière et je l'ai réutilisé pour un cas concret. Je connais maintenant les étapes à réaliser pour produire un modèle de Topic Modelling et les problématiques que je pourrais rencontrer en réalisant ce type de projet. \\
+De plus, j'ai pu développer mes capacités d'apprentissage en autonomie. En effet, je n'avais jamais utilisé Flask et les autres technologies citées plus haut et j'ai beaucoup apprécié le fait de les apprendre par moi-même et de me les approprier. J'ai trouvé ma propre méthode d'apprentissage et mon propre rythme de travail. \\
 J’ai pu également mettre en œuvre les notions apprises en cours de base de données, via la définition et la mise en place de la base de données, ainsi que la réalisation de graphes UML. \\
 J'ai parfait mes compétences en développement logiciel. J'ai pu mettre en pratique l'utilisation de Git. \\
-
-De plus cette expérience m’a permise de découvrir les conditions de travail dans un laboratoire de recherche. J’ai particulièrement apprécié la liberté d’organisation et de répartition de la charge de travail que m’a offert ce stage. \\
+De plus, cette expérience m’a permis de découvrir les conditions de travail dans un laboratoire de recherche. J’ai particulièrement apprécié la liberté d’organisation et de répartition de la charge de travail que m’a offert ce stage. \\
 
 Je remercie également M.Parmentier de m'avoir fait découvrir de  nombreuses ressources autour des langues et du Traitement des Langues. Ce stage ne fait que me conforter dans l'envie de continuer dans cette voie. 
 
@@ -358,5 +369,7 @@ Une fois nos tests réalisés une première fois on regarde les résultats obten
     \label{fig:UML2}
 \end{figure}
 
+\newpage
+\input{dos_rapport}
 
 \end{document}
