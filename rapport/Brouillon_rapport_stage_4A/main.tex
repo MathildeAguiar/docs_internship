@@ -7,6 +7,8 @@
 \usepackage{hyperref}
 \usepackage{setspace}
 \graphicspath{{figures/}}
+\usepackage{hyperref}
+
 
 
 \begin{document}
@@ -46,7 +48,7 @@
 \newpage
 
 
-\section*{Remerciments :}
+\section*{Remerciements}
 
 Je remercie tout d'abord le laboratoire INRIA LORIA de Nancy, le CNRS Grand Est et plus particulièrement l'équipe SYNALP au sein de laquelle j'ai eu grand plaisir à travailler pendant 3 mois et demi. 
 
@@ -57,13 +59,13 @@ Pour finir, je remercie Jean-François Monin, mon enseignant référent, pour m�
 
 \newpage
 
-\section*{Abstract:}
+\section*{Abstract}
 
 This summer I had the opportunity to do my internship at LORIA in the SyNaLP research team. I was in charge of helping Mr.Parmentier to develop an application where a teacher can create a learning path for its students by having some help to create some exercises. It can auto-generate questions targeting some grammatical notions that the teacher will previously choose. 
 During this internship I was in charge of developing the “teacher side” of the Web application. To do so, I used a light framework called Flask. I also used some plugins like Flask WTForms and Bootstrap Flask. I also took care of the database redefinition and development, by using Flask SQLAlchemy and SQLite dialects.  
 In the second part my work was about the Natural Language Processing part of the project. I was in charge of designing a model specialized in \textit{topic modeling}. I had to create my own data-set from the Gutenberg online library and WikiData. Then I tried designing a model that could determine the topics from each text. To do so I used some ressources (tokenizers and models) pre-trained and designed by Hugging Face. 
 
-\section*{Résumé : }
+\section*{Résumé}
 
 
 Pour mon stage d’INFO4 j’ai eu la chance d’intégrer le LORIA et l’équipe de recherche SyNaLP. J’ai travaillé avec M.Parmentier, mon tuteur de stage, pour l’assister dans le développement d’une application d’aide à l’apprentissage des langues. Cette application a pour but de faciliter la création d’exercices ciblant des notions grammaticales particulières en proposant un analyseur de textes qui va auto-générer des questions (traitant ladite notion). 
@@ -78,7 +80,7 @@ Dans une seconde partie je me suis occupée de la partie traitement des langues.
 
 \newpage
 
-\section{Introduction :}
+\section{Introduction}
 
 Dans un monde globalisé comme le notre, l’apprentissage des langues est un point crucial pour tout étudiant. Que ce soit la maîtrise de notre langue maternelle ou d’une langue étrangère, il est parfois difficile de trouver des exercices et un parcours d’apprentissage réellement adapté à nos besoins. C’est pour répondre à ce besoin que notre exerciseur a vu le jour. Que ce soit pour l’enseignant en proposant une interface de création d’exercices et de parcours de formations innovant, ou pour l’élève qui, en fonction de ses besoins aura des exercices qui lui correspondent, l’exerciseur Métal essaie de répondre à toutes ses problématiques.  \\
 Notre exerciseur comporte de nombreuses fonctionnalités : un analyseur de texte comportant de nombreuses fonctionnalités, comme l'extraction de notions grammaticales dans un texte puis générant des questions en fonction de celles-ci (fonctionnalité principale pour le moment) mais aussi la possibilité de classer des textes en fonction de leur niveau de difficulté, l'enseignant verra la création d'exercices facilitée et pourra ainsi donner à ses élèves des exercices plus ciblés et plus adaptés à chacun. \\
@@ -88,8 +90,8 @@ Dans ce rapport, je vais tout d’abord présenter le contexte de mon stage et s
 
 \newpage 
 
-\section{Contexte du stage :}
-\subsection{Le laboratoire LORIA :}
+\section{Contexte du stage}
+\subsection{Le laboratoire LORIA}
 
 Situé à Vandœuvre-lès-Nancy, dans le Grand Est, le Laboratoire lorrain de Recherche en Informatique et ses Applications a été créé en 1997 et est commun à L’Université de Lorraine, l’Inria ainsi qu’au CNRS. Le laboratoire compte plus de 400 personnes réparties en 29 équipes de recherche. Il touche à différents domaines de l’informatique. 
 Personnellement, j’ai eu la chance d’intégrer l’équipe SyNaLP (Symbolic and statistical NLP) qui fait partie du département du traitement des langues et des connaissances. Les sujets principaux de recherche de l’équipe sont la génération de texte, dialogue homme-machine, Text-To-Speech, analyse de sentiments dans un texte, etc. Ayant beaucoup apprécié le cours de Communication Langagière du semestre 8, j’étais particulièrement ravie d’intégrer l’équipe et de pouvoir découvrir un peu plus ce domaine de l’informatique que j’apprécie énormément. 
@@ -104,7 +106,7 @@ Personnellement, j’ai eu la chance d’intégrer l’équipe SyNaLP (Symbolic 
 \end{figure}
 
 
-\subsection{L'exerciseur Métal :}
+\subsection{L'exerciseur Métal}
 
 L'exerciseur Métal a pour but d'assister les professeurs de langues ou de lettres dans la réalisation d'exercices et de matériels de cours. La plateforme sera accessible à la fois par des enseignants mais également par des élèves. \\
 Du côté élève, ils ont accès aux chapitres de cours, aux sessions d'exercices préparés par leurs enseignants ainsi qu'à leurs résultats. \\
@@ -113,10 +115,10 @@ Une fois les questions validées, l'enseignant peut les utiliser pour constituer
 L'enseignant peut également créer une session d'exercices qui sera une collection d'exercices à donner en devoir à un ou plusieurs groupes d'élèves. Cela permet d'attribuer aux élèves des exercices qui leur correspondent et qui ciblent leurs difficultés sur des notions grammaticales bien précises.
 Les enseignants peuvent également créer des chapitres auxquels seront associés des exercices, des notions grammaticales abordées, des fichiers choisis par l'enseignant, un résumé/des commentaires sur le contenu du chapitre et un ou des groupes d'élèves.
 
-\subsection{Objectifs du stage :}
+\subsection{Objectifs du stage}
 
 Le sujet principal de mon stage est donc le développement de l'interface Web de l'exerciseur. J'ai travaillé uniquement sur les interfaces destinées à l'enseignant. 
-Mon stage s’articule donc en 2 parties : la première consiste à la re-conception des interfaces en utilisant le framework Python Flask. La deuxième partie consiste à travailler sur l’aspect traitement du langage. Je dois réaliser, tester, imaginer un modèle permettant de déterminer les sujets principaux d'un texte donné en entrée. Pour cela je vais utiliser la bibliothèque Transformers de Hugging Face et utiliser les modèles disponibles sur leur "Hub". \textbf{ADD MORE DETAILS} 
+Mon stage s’articule donc en 2 parties : la première consiste à la re-conception des interfaces en utilisant le framework Python Flask. La deuxième partie consiste à travailler sur l’aspect traitement du langage. Je dois réaliser, tester, imaginer un modèle permettant de déterminer les sujets principaux d'un texte donné en entrée. Pour cela je vais utiliser la bibliothèque Transformers de Hugging Face et utiliser les modèles disponibles sur leur "Hub". Mais avant ça je vais devoir constituer un jeu de données à partir de données tirées du Web.
 
 La première version de notre exerciseur a été conçue en PHP par un ingénieur qui a maintenant quitté l’équipe. Ma mission consistait donc à reconstruire complètement la partie interface de l’enseignant en utilisant le framework Python Flask. J’ai du donc passer par plusieurs étapes : 
 
@@ -154,11 +156,11 @@ Pour la seconde partie sur le traitement des langues j'ai suivi les étapes suiv
 Attention ces étapes sont sujettes à changements car cette partie de mon stage est toujours en cours.
 
 
-\section{Travail effectué :}
-\subsection{Outils utilisés :}
+\section{Travail effectué}
+\subsection{Outils utilisés}
 Pour être efficace dans mon travail il était important pour moi d'utiliser des outils adaptés. J'ai utilisé à la fois des outils pour coder mais aussi pour m'organiser et pour la gestion de mon code. \\
 
-\subsubsection{Trello Kanban :}
+\subsubsection{Trello Kanban}
 Pour définir les tâches à réaliser j’utilisais la méthode Kanban comme vue en cours de Génie Logiciel. Pour ce faire j’utilisais Trello où j’organisais mes étiquettes en 3 colonnes : TO DO, ON GOING et DONE. J’utilisais également un code couleurs (rouge, vert, jaune) pour définir la priorité de la tâche. 
 
 \begin{figure}[h]
@@ -168,32 +170,76 @@ Pour définir les tâches à réaliser j’utilisais la méthode Kanban comme vu
     \label{fig:trello}
 \end{figure}
 
-\subsubsection{Git :}
+\subsubsection{Git}
 Pour la gestion de mon code j'ai bien sûr utilisé Git (associé à GitHub et VisualStudio Code). À chaque nouvel aspect de mon développement je créais une branche et à chaque nouvelle fonctionnalité terminée je faisais des commits de mon code. Comme je travaillais seule, je n'ai pas eu à régler de conflit. 
 
-\subsubsection{Adobe XD :}
-Pour réaliser les maquettes de mes interfaces j'ai utilisé AdobeXD, un logiciel de la suite Adobe. Ce logiciel nécessite un peu de prise en main et je n'ai pas découvert toutes les fonctionnalités disponibles du logiciel. Cependant mon utilisation assez basique m'a permis de réaliser facilement des maquettes simples. \textit{Voir certaines de mes maquettes aux annexes 6 et 7.}
+\subsubsection{Adobe XD}
+Pour réaliser les maquettes de mes interfaces j'ai utilisé AdobeXD, un logiciel de la suite Adobe. Ce logiciel nécessite un peu de prise en main et je n'ai pas découvert toutes les fonctionnalités disponibles du logiciel. Cependant mon utilisation assez basique m'a permis de réaliser facilement des maquettes simples. \textit{Voir certaines de mes maquettes aux annexes 10 et 11.}
 
 
-\subsubsection{Visual Studio Code :}
+\subsubsection{Visual Studio Code}
 Pour la partie développement Web j'ai utilisé l'IDE  VisualStudio Code qui, avec les extensions Python, inclu un debugger Python. J'avais déjà l'habitude d'utiliser VS Code pendant l'année scolaire je n'ai donc pas eu à me réadapter à un nouvel IDE.
 
-\subsubsection{Python Flask :}
+\subsubsection{Python Flask}
 
 Pour réaliser notre exerciseur mon tuteur m’a suggéré d’utiliser le framework léger Python Flask. Celui-ci est particulièrement intéressant car il permet de générer des pages Web simplement et est extrêmement modulable grâce aux nombreux plugins que l’on peut lui adjoindre. Il permet tout de même de gérer les sessions, les routes et le serveur de développement. \\
-Flask se base sur le modèle MVT : Modèle, Vue, Template. La partie Modèle concerne tout ce qui va être intéractions avec la base de données, la partie Vue est là on l'on gère nos routes (les URLs des pages ainsi que ce qu'il faut transmettre aux templates), enfin les Templates sont les pages HTML qui affichent et structurent les variables passées via notre Vue. Le modèle MVT est plutôt intuitif et ressemble au MVC utilisé dans le projet Java du S6. Moins lourde que la version PHP précédente, Flask a donc été retenu pour le développement de notre application.
+Flask se base sur le modèle MVT : Modèle, Vue, Template. La partie Modèle concerne tout ce qui va être intéractions avec la base de données, la partie Vue est là on l'on gère nos routes (les URLs des pages ainsi que ce qu'il faut transmettre aux templates), enfin les Templates sont les pages HTML qui affichent et structurent les variables passées via notre Vue. Le modèle MVT est plutôt intuitif et ressemble au MVC utilisé dans le projet Java du S6. 
+Comme spécifié précédemment le Modèle est celui-ci qui contient le code de notre base de données et les méthodes associées à celle-ci. Dans mon projet j'ai utilisé l'ORM (Object Relational Mapping) SQLAlchemy qui me pert de coder d'écrire mes requêtes et de définir mes tables de base de données directement en Python tout en me basant sur une base de données utilisant des dialectes de SQLite. \textit{Voir figure 3.}
 
-\subsubsection{Google Collabs :}
-Pour ma partie "recherche" j'ai utilisé les notebooks disponibles sur Google Collabs. Ils sont largement utilisés dans la communauté NLP et c'est d'ailleurs ce que l'on avait utilisé pour les TP de Communication Langagière. L'avantage de Collabs c'est qu'ils allient à la fois un notebook et un environnement d'exécution GPU (je n'ai pas de GPU sur ma machine), ce qui permet d'accélérer les exécutions. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ex_models.png}
+    \caption{Extrait de notre modèle - Table "Utilisateur" }
+    \label{fig:ex_models}
+\end{figure}
+
+La Vue est là où sont définies nos routes, nos URLs. C'est celles-ci qui font le lien entre la base de données et les templates. Elles exécutent les requêtes définies dans le Modèle et passent leurs résultats aux templates. Elle fait aussi le lien entre les autres classes (comme celles définies pour les formulaires) et les templates correspondantes. \textit{Voir figure 4.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ex_views.png}
+    \caption{Extrait de la Vue}
+    \label{fig:ex_views}
+\end{figure}
+
+
+En ce qui concerne tous les formulaires de saisie, j'ai utilisé \textbf{Flask WTForms} ce qui m'a permis de facilement définir  les champs voulus. \textit{Voir figure 5.}
+
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ex_wtforms.png}
+    \caption{Exemple de formulaire WTForms - formulaire de création d'exercices}
+    \label{fig:ex_wtforms}
+\end{figure}
+
+\clearpage
+
+Les templates quand à elles sont des pages HTML qui représentent ce que la Vue leur transmet. Elles sont très pratiques car il y a un système d'héritage ce qui permet de ne pas répéter plusieurs morceaux de code identiques. On peut définir les blocs de code à inclure dans une autre template via \textbf{ \{\% block content \%\} \{\%endblock\%\}}. \textit{Voir figure 6}. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ex_block_base.png}
+    \caption{Un extrait d'une template - base.html}
+    \label{fig:ex_temp}
+\end{figure}
+
+Moins lourde que la version PHP précédente, Flask a donc été retenu pour le développement de notre application.
+
+\subsubsection{Google Collabs}
+Pour ma partie "recherche" j'ai utilisé les notebooks disponibles sur Google Collabs. Ils sont largement utilisés dans la communauté Natural Language Processing (NLP) et c'est d'ailleurs ce que l'on avait utilisé pour les TP de Communication Langagière. L'avantage de Collabs c'est qu'ils allient à la fois un notebook et un environnement d'exécution GPU (je n'ai pas de GPU sur ma machine), ce qui permet d'accélérer les exécutions. 
 De plus, le concept de notebook est très pratique pour des travaux de type "recherche". Il me permet de noter au fur et à mesure mes observations, les ressources utilisées et des commentaires bien plus fournis que de simple commentaires Python. En utilisant les notebooks on peut structurer notre démarche expérimentale directement avec des extraits de code. 
 
+\subsubsection{Hugging Face}
+Hugging Face est une organisation/entreprise spécialisée dans le Traitement Automatique des Langues. Elle fourni de nombreux modèles pré-entraînés, tokenizers, datasets et autres outils pour réaliser les tâches les plus communes de NLP. L'avantage de Hugging Face est qu'ils mettent à disposition à la fois une solution payante mais que leurs modèles pré-entraînés sont disponibles gratuitement et que l'on peut les utiliser librement. C'est une solution très pratique car, en ayant des modèles \textbf{pré-entraînés}, cela me permet de ne pas à réaliser l'entraînement de 0 qui est à la fois coûteuse en temps mais aussi en énergie. Je ne réaliserais qu'un entraînement "rapide", le \textbf{fine-tuning}, qui visera à entraîner mon modèle sur des données ciblées pour qu'il réponde plus particulièrement à la tâche que je souhaite réaliser. 
 
-\subsection{Organisation du travail :}
+\subsection{Organisation du travail}
 
 J’ai travaillé en grande partie en autonomie et j’ai donc eu une liberté quasi totale sur ma façon d’organiser mon travail. M.Parmentier et moi avions des réunions hebdomadaires au laboratoire pour faire un point sur mon avancement et définir les objectifs de la semaine à venir. Durant ses réunions nous échangions également sur la façon dont nous imaginions notre exerciseur. 
 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.35]{gantt.png}
     \caption{Diagramme de Gantt de mon stage}
@@ -222,22 +268,22 @@ Globalement mon stage s'est déroulé comme suit :
 
 Nous avons préféré mettre l'accent sur la partie développement Web. En effet cette partie était celle où je pouvais le plus facilement obtenir des résultats concrets et intégrables dans notre application finale. La seconde partie de mon stage étant plus expérimentale, je ne suis pas certaine d'obtenir des bons résultats et même arriver au bout de mes expérimentations.  
 
-\subsection{Missions réalisées :}
+\subsection{Missions réalisées}
 
-\subsubsection{Développement Web :}
+\subsubsection{Développement Web}
 
-Tout d’abord j’ai passé les premières semaines de mon stage à découvrir Flask ainsi que quelqu’un de ses plugins. J’ai réalisé différents tutoriels et bien étudié la documentation de chaque plugin au fur et à mesure de mon développement. Le 1er tutoriel que j’ai réalisé fut un simple site (voir annexe figure 4). Ce tutoriel m’a permis de découvrir les bases de Flask, le MVT (Modèle, Vue, Template) avec l’utilisation de templates Jinja, mais aussi de découvrir un ORM (Object–relational mapping) avec l’utilisation de SQLAlchemy. \\
+Tout d’abord j’ai passé les premières semaines de mon stage à découvrir Flask ainsi que quelqu’un de ses plugins. J’ai réalisé différents tutoriels et bien étudié la documentation de chaque plugin au fur et à mesure de mon développement. Le 1er tutoriel que j’ai réalisé fut un simple site (voir annexe figure 12). Ce tutoriel m’a permis de découvrir les bases de Flask, le MVT (Modèle, Vue, Template) avec l’utilisation de templates Jinja, mais aussi de découvrir un ORM (Object–relational mapping) avec l’utilisation de SQLAlchemy. \\
 
-J’ai ensuite fait un tutoriel pour découvrir SQLite. Ainsi qu’un autre, rapide, pour découvrir la génération de formulaires avec le plugin Flask WTForms. Pour m’entraîner à maîtriser ses 2 concepts j’ai réalisé une interface de gestion de base de données d’un magasin de disques musicaux. Je n’ai pas utilisé d’ORM cette fois-ci et j’ai simplement écrit mes requêtes SQL via des simples Strings. \textit{Voir figure 5 en annexe}. \\
+J’ai ensuite fait un tutoriel pour découvrir SQLite. Ainsi qu’un autre, rapide, pour découvrir la génération de formulaires avec le plugin Flask WTForms. Pour m’entraîner à maîtriser ses 2 concepts j’ai réalisé une interface de gestion de base de données d’un magasin de disques musicaux. Je n’ai pas utilisé d’ORM cette fois-ci et j’ai simplement écrit mes requêtes SQL via des simples Strings. \textit{Voir figure 13 en annexe}. \\
 
-En parallèle de la réalisation de ses tutoriels, j’ai réalisé des maquettes des interfaces de notre application à l’aide de Adobe XD. Cette étape était pour moi nécessaire car j’avais besoin d’une représentation visuelle de ce à quoi notre application pourrait ressembler. De plus cela nous a permis à M.Parmentier et moi d’échanger plus facilement sur les fonctionnalités que notre application devrait posséder.   \textit{Voir figures 6 et 7 en annexe}. \\
+En parallèle de la réalisation de ses tutoriels, j’ai réalisé des maquettes des interfaces de notre application à l’aide de Adobe XD. Cette étape était pour moi nécessaire car j’avais besoin d’une représentation visuelle de ce à quoi notre application pourrait ressembler. De plus cela nous a permis à M.Parmentier et moi d’échanger plus facilement sur les fonctionnalités que notre application devrait posséder.   \textit{Voir figures 14 et 15 en annexe}. \\
  
 Enfin une fois après avoir maîtrisé tous ses nouveaux frameworks j’ai pu me lancer dans la réalisation des interfaces de l’exerciseur destinées à l’enseignant. \\
 
-Tout d’abord j’ai commencé par reprendre la base de données créée par le précédent ingénieur. Cette dernière comportait 41 tables, ce qui nous paraissait excessif, et certaines fonctionnalités n'étaient plus intéressantes. Pour me guider dans la redéfinition de la base de données je me suis inspirée du partiel de base de données du semestre 7. J’ai commencé par faire une "interview client" en définissant toutes les fonctionnalités et les choses réalisables avec nos interfaces. Malheureusement je n’ai pas pu faire l’interview d’un enseignant j’ai donc imaginé un dialogue par moi-même. De plus mes nombreux échanges avec M.Parmentier m’ont permis de mieux définir les tenants et aboutissants de notre projet. J’ai ensuite réalisé un graphe UML \textit{(voir en annexe les figures 10 et 11)}. Enfin à partir de celui-ci j’ai pu coder la base de données avec l’ORM SQLAlchemy, celle-ci utilisant le dialecte SQLite. \\
+Tout d’abord j’ai commencé par reprendre la base de données créée par le précédent ingénieur. Cette dernière comportait 41 tables, ce qui nous paraissait excessif, et certaines fonctionnalités n'étaient plus intéressantes. Pour me guider dans la redéfinition de la base de données je me suis inspirée du partiel de base de données du semestre 7. J’ai commencé par faire une "interview client" en définissant toutes les fonctionnalités et les choses réalisables avec nos interfaces. Malheureusement je n’ai pas pu faire l’interview d’un enseignant j’ai donc imaginé un dialogue par moi-même. De plus mes nombreux échanges avec M.Parmentier m’ont permis de mieux définir les tenants et aboutissants de notre projet. J’ai ensuite réalisé un graphe UML \textit{(voir en annexe les figures 16 et 17)}. Enfin à partir de celui-ci j’ai pu coder la base de données avec l’ORM SQLAlchemy, celle-ci utilisant le dialecte SQLite. \\
 
-En parallèle de la définition de la base de données, j’ai développé les interfaces "enseignant". Pour ce faire, je me suis appuyée sur les maquettes réalisées avec Adobe XD. J’ai utilisé les connaissances acquises avec les tutoriels réalisés pendant les premières semaines pour mettre en place les différentes interfaces. J’ai donc utilisé dans la mesure du possible les macros de Bootstrap Flask et complété certains aspects avec Bootstrap seul. 
-Notre projet a la structure suivante :
+En parallèle de la définition de la base de données, j’ai développé les interfaces "enseignant" (\textit{voir figure 18 en annexe}). Pour ce faire, je me suis appuyée sur les maquettes réalisées avec Adobe XD. J’ai utilisé les connaissances acquises avec les tutoriels réalisés pendant les premières semaines pour mettre en place les différentes interfaces. J’ai donc utilisé dans la mesure du possible les macros de Bootstrap Flask et complété certains aspects avec Bootstrap seul. 
+Notre projet a la structure suivante (\textit{voir figure 8}):
 \begin{itemize}
     \item Les fichiers 'config.py' et 'run.py' servent à lancer l'exécution en respectant des hyper paramètres de configuration.
     
@@ -257,13 +303,13 @@ Notre projet a la structure suivante :
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.33]{structure_Flask.png}
+    \includegraphics[scale=0.4]{structure_Flask.png}
     \caption{Structure des fichiers des interfaces}
     \label{fig:structure_flask}
 \end{figure}
 
 
-En ce qui concerne toutes les interfaces de création d’exercices, de sessions d’exercices ou de chapitres j’ai utilisé des formulaires basés sur Flask WTForms. Ce plugin rend la création de formulaires vraiment très simple. J'ai utilisé un module complémentaire, Flask CKEditor, pour offrir la possibilité d'ajouter du rich text (texte gras, italique, surlignage, snippets de code, etc.) dans la saisie de champ du formulaire. \textit{Voir figure 14 en annexe.} \\ 
+En ce qui concerne toutes les interfaces de création d’exercices, de sessions d’exercices ou de chapitres j’ai utilisé des formulaires basés sur Flask WTForms. Ce plugin rend la création de formulaires vraiment très simple. J'ai utilisé un module complémentaire, Flask CKEditor, pour offrir la possibilité d'ajouter du rich text (texte gras, italique, surlignage, snippets de code, etc.) dans la saisie de champ du formulaire. \textit{Voir figure 20 en annexe.} \\ 
 
 
 Pour l'affichage de graphiques, notamment dans l'interface de gestion des résultats d'un élève, j'ai utilisé Bokeh. Il m'a permis de créer des graphiques intéractifs des notes obtenues par un élèves et tout cela directement inclu dans mes templates Jinja. \\
@@ -271,20 +317,13 @@ Pour l'affichage de graphiques, notamment dans l'interface de gestion des résul
 Pour finir, j'ai utilisé Pdoc pour créer une documentation de mon code. Mes fichiers .py sont plutôt longs et comportent de nombreuses fonctions (models.py avec environ 1000 lignes par exemple). Grâce à Pdoc j'ai non seulement pu générer une documentation au format HTML (qui d'ailleurs utilise Jinja 2 aussi) mais aussi une documentation consultable dans l'IDE (comme la JavaDoc dans Eclipse).
 
 
-\subsubsection{Partie "recherche" sur le traitement du langage naturel :}
-
+\subsubsection{Partie "recherche" sur le traitement du langage naturel}
+\textbf{Définition du sujet :} \\
 Pour cette partie je n'avais pas un niveau d'exigence en terme de résultats. Je travaille d'ailleurs encore sur cette partie au moment où je rédige ce rapport. \\
 Tout d'abord il a fallu définir notre problématique et les résultats souhaités de la part de notre modèle. Nous avons décidé de créer un modèle qui serait capable de labéliser des textes et d'en extraire les sujets principaux. \\
 
 Pour cela je me suis organisée comme ceci-ci : \\
 J'ai d'abord dû rassembler des ressources pertinentes pour mon auto-formation. Je me suis appuyée sur des cours dispensés par M.Parmentier et certaines de ses collègues dans le cadre du Master TAL. J'ai également décidé d'utiliser les Transformers (librairies) développées par Hugging Face, j'ai donc suivi les cours créés par les développeurs de Hugging Face. J'ai également revu les cours et TP réalisés en cours de Communication Langagière au S8. \\
-
-Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cette partie en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutenberg. 
-J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper Python SPARQL. \textbf{PLUS DE DÉTAILS}. \\
-
-Une fois les données récoltées j'ai du les traiter et les rendre exploitables par notre modèle. J'ai donc commencé par 
-
-Après avoir lu les cours de Hugging Face j'ai eu une meilleure vision de la façon de procéder. J'ai tout d'abord commencé à explorer les modèles disponibles sur le Hub de Hugging Face. Notre tâche à réaliser est du \textit{topic modeling}, pour se faire il faut utiliser un modèle à \textbf{encodeur unique.} 
 
 
 \begin{figure}[h]
@@ -295,27 +334,79 @@ Après avoir lu les cours de Hugging Face j'ai eu une meilleure vision de la fa�
 \end{figure}
 
 
+\textbf{Collecte des données d'entraînement et de test} \\
+Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cet aspect en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutenberg. J'ai donc récolté une collection de ebooks classiques en français.
+J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper Python SPARQL (pour Dbpedia) et au wrapper WPTools (pour Wikipedia). \\
+En effet Dbpedia et Wikipedia sont des encyclopédies libres qui mettent à disposition les ressources entrées par les utilisateurs. Elles sont structurées selon le modèle RDF. C'est à dire que les ressources présentes sur ses sites sont organisées de façon structurée. Par exemple, chaque page Dbpedia est composée d'un \textbf{title}, d'un \textbf{label}, etc. Cette structure va nous permettre de réaliser des requêtes très facilement et de n'extraire que le contenu dont nous avons besoin. \\
 
-\subsection{Difficultés rencontrées :}
+\clearpage
+
+\textbf{Choix du tokenizer} \\
+Une fois les données récoltées j'ai du les traiter et les rendre exploitables par notre modèle. J'ai donc commencé par tester plusieurs méthodes de \textit{pre-processing}. Cette étape consiste en la conversion d'un token en un entier compréhensible par le modèle. Pour la tâche de topic modeling j'avais besoin d'avoir un  tokenizer réunissant les propriétés suivantes :
+
+\begin{itemize}
+    \item Suppression de la ponctuation 
+    \item Passage en minuscules de certains tokens 
+    \item Suppression des mots fréquents (et qui comportent donc peu d'information)
+\end{itemize} 
+
+
+La question s'est posée de savoir si je devais réaliser un tokenizer de "A à Z" ou plutôt utiliser un tokenizer déjà préexistant. J'ai donc d'abord réaliser mon propre tokenizer avec la bibliothèque NLTK. J'ai réalisé quelques tests sur des phrases en français et des tests sur des phrases en japonais. J'obtiens de bons résultats sur les collections de phrases françaises mais il ne fonctionne pas sur les collection de phrases japonaises. Même si pour l'instant mon modèle ne verra que des phrases françaises, j'ai préféré laisser ce tokenizer de côté. 
+J'ai donc décidé de me tourner vers des Tokenizers plus puissants et déjà pré-entraînés. J'ai décidé d'utiliser des Tokenizers mis à disposition par Hugging Face. En partant sur tokenizer pré-entrainé il faut que celui-ci corresponde au modèle utilisé, je suis donc passée à l'étape "choix du modèle". \\
+
+\textbf{Choix et définition du modèle} \\
+Notre tâche à réaliser est du \textit{topic modeling}, pour se faire il faut utiliser un modèle à encodeur unique. 
+Parmi les modèles disponibles sur le \textbf{\href{https://huggingface.co/models}{'Hub' de Hugging Face }}, j'ai décidé de faire des essais avec les modèles BERT, développé par Google, et DistillBERT, développé par Hugging Face. Ces 2 modèles sont bien adaptés pour la tâche de topic modeling. L'avantage de DistillBERT par rapport à BERT est sa rapidité et sa légèreté tout en gardant des résultats proche de ceux de BERT (seulement 0.6 \% de moins d'\textit{accuracy} sur les mêmes jeux de tests, \textit{voir figure 11, table 2}). \\
+
+\clearpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.45]{bench_BERT.png}
+    \caption{BERT benchmarks}
+    \label{fig:bench_bert}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.45]{bench_distillBERT.png}
+    \caption{DistillBERT benchmarks}
+    \label{fig:bench_distill}
+\end{figure}
+
+ \clearpage
+
+\textbf{Entraînement et analyse des résultats} \\
+\textit{Attention ! Cette partie de mon stage est toujours en cours !}
+
+Une fois choisi, il est temps de passer à l'entraînement du modèle. Je possède donc un jeu de données d'entraînement et c'est à partir de celles-ci que je vais pouvoir \textit{fine-tune} mon modèle. Je vais donc devoir trouver les bons paramètres à utiliser pour obtenir une \textit{accuracy} (probabilité que la réponse donnée par le modèle soit juste) élevée mais aussi pour avoir un temps d'exécution décent. \\ 
+
+\textbf{Tests} \\
+Une fois mon modèle satisfaisant je vais pouvoir passer mon jeu de données test au modèle. Je vais m'assurer que les résultats obtenus sont ceux attendus et je vais ajuster encore une fois mes paramètres pour voir si je peux obtenir de meilleurs résultats.  
+
+
+\subsection{Difficultés rencontrées}
 
 Dans l’ensemble, la réalisation des interfaces de l’exerciseur s’est plutôt bien passée. Même si j’ai rencontré quelques embûches, le temps passé sur une difficulté n’a jamais été très long. De plus, le fait d’avoir plusieurs tâches à faire en parallèle m’a permis de ne pas "rester bloquée" sur la tâche qui me donnait du fil à retordre. \\
 
-Une des difficultés majeures fut la réalisation de la base de données. En effet, le modèle conçu précédemment ne convenait plus tout à fait à l'idée que nous nous faisions de l’exerciseur. Le fichier contenant la base de données n’était pas commenté/documenté, il fallait donc interpréter soi-même certains champs définis par l’ingénieur précédent.  De plus, sans "client" avec lequel discuter il est plus compliqué de définir les besoins des élèves et enseignants qui vont utiliser la plateforme. \\
+Une des difficultés majeures fut la réalisation de la base de données. Le modèle conçu précédemment ne convenait plus tout à fait à l'idée que nous nous faisions de l’exerciseur. En effet, l'ingénieur précédent avait imaginé certaines fonctionnalité comme la \textit{gamification} (l'apprentissage par le jeu) des exercices, la possibilité d'obtenir des récompenses au nombre d'exercices réalisés, etc. Certaines interfaces étaient un petit peu désuètes et il fallait un peu les restructurer.   
+De plus, le fichier contenant la base de données n’était pas commenté/documenté, il fallait donc interpréter soi-même certains champs définis par l’ingénieur précédent.  De plus, sans "client" avec lequel discuter il est plus compliqué de définir les besoins des élèves et enseignants qui vont utiliser la plateforme. \\
 
 Une interface a été plus compliquée à imaginer et à coder que les autres, l'interface de l'analyse d'un texte par l'analyseur. En effet je me suis inspirée de l'interface réalisée par l'ingénieur précédent mais j'ai souhaité remodeler quelques aspects. Cette interface nécessite de garder une base de code commune mais possède de nombreuses fonctionnalités et doit donc être très modulable. J'ai donc dû jouer sur l'utilisation de différents paramètres dans les routes. Mais la difficulté principale reste le fait de ne pas pouvoir tester avec de vraies données ce que l'analyseur nous renvoie. Je pense que l'implémentation que j'ai réalisée sera sujette à encore nombreux changements quand l'analyseur sera stabilisé. 
 
-\subsection{Améliorations possibles :}
+\subsection{Améliorations possibles}
 À l’heure où j’écris ce rapport, mon stage n’est pas encore terminé. Je peux donc encore continuer à améliorer mon travail. Cependant je vois quelques points que je n’aurais pas le temps d’aborder. \\
 
-\textbf{L’internationalisation :} Dans la version actuelle, notre exerciseur est uniquement en français. J’ai voulu réaliser une version anglaise de l’interface à l’aide de Babel Flask. Ce plugin Flask permet, à partir de Strings balisée, de générer un fichier .po qui sert de dictionnaire pour les termes à traduire. Cependant je me suis rendue compte que ce plugin ne me serait pas d’une grande aide. En effet les phrases balisées doivent être des Strings "brutes" et non contenues dans une variable. Il faudrait donc un autre plugin ou une autre solution pour traduire nos interfaces mais que celles-ci restent également facile à maintenir. \\
+\textbf{L’internationalisation} Dans la version actuelle, notre exerciseur est uniquement en français. J’ai voulu réaliser une version anglaise de l’interface à l’aide de Babel Flask. Ce plugin Flask permet, à partir de Strings balisée, de générer un fichier .po qui sert de dictionnaire pour les termes à traduire. Cependant je me suis rendue compte que ce plugin ne me serait pas d’une grande aide. En effet les phrases balisées doivent être des Strings "brutes" et non contenues dans une variable. Il faudrait donc un autre plugin ou une autre solution pour traduire nos interfaces mais que celles-ci restent également facile à maintenir. \\
 
-\textbf{L'analyse des textes :}  Compte tenu de la date de rendu de ce rapport, je n'ai pas fini de travailler sur la partie NLP. De plus, cette partie est plus compliquée à appréhender pour moi et nous ne sommes pas sûrs d'obtenir des résultats satisfaisants à la date de fin de mon stage. \\
+\textbf{L'analyse des textes}  Compte tenu de la date de rendu de ce rapport, je n'ai pas fini de travailler sur la partie NLP. De plus, cette partie est plus compliquée à appréhender pour moi et nous ne sommes pas sûrs d'obtenir des résultats satisfaisants à la date de fin de mon stage. \\
 
-\textbf{Avoir un retour "utilisateur" :} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa facilité d'utilisation. 
+\textbf{Avoir un retour "utilisateur"} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa facilité d'utilisation. 
 Un autre point intéressant à aborder serait que notre interface soit utilisable par le plus grand nombre, par conséquent qu'elle comporte des modules \textit{d'accessibilité} (pour les malvoyants par exemple). 
 
 
-\section{Bilan personnel :}
+\section{Bilan personnel}
 
 
 Ce stage m’a permis de parfaire mes compétences en Python et découvrir Flask. Je ne savais pas qu’il était possible de coder des pages Web à l’aide de Python. Naturellement j’ai aussi pu développer mes compétences en HTML/CSS et pu approfondir mon utilisation de Bootstrap. \\
@@ -327,9 +418,9 @@ De plus, cette expérience m’a permis de découvrir les conditions de travail 
 
 Je remercie également M.Parmentier de m'avoir fait découvrir de  nombreuses ressources autour des langues et du Traitement des Langues. Ce stage ne fait que me conforter dans l'envie de continuer dans cette voie. 
 
-\subsection{Compétences développées :}
+\subsection{Compétences développées}
 
-\subsubsection{Capacité à mettre en place des dispositifs expérimentaux :}
+\subsubsection{Capacité à mettre en place des dispositifs expérimentaux  }
 
 Pour la partie "recherche" de mon stage j'ai dû mettre en place un dispositif expérimental. Pour mener à bien ma mission je me suis organisée selon les étapes suivantes. \\
 Tout d'abord moi et mon tuteur avons commencé par définir l'objectif de notre modèle et les résultats attendus par celui-ci. \\
