@@ -184,7 +184,7 @@ Pour la partie développement Web j'ai utilisé l'IDE  VisualStudio Code qui, av
 
 Pour réaliser notre exerciseur mon tuteur m’a suggéré d’utiliser le framework léger Python Flask. Celui-ci est particulièrement intéressant car il permet de générer des pages Web simplement et est extrêmement modulable grâce aux nombreux plugins que l’on peut lui adjoindre. Il permet tout de même de gérer les sessions, les routes et le serveur de développement. \\
 Flask se base sur le modèle MVT : Modèle, Vue, Template. La partie Modèle concerne tout ce qui va être intéractions avec la base de données, la partie Vue est là on l'on gère nos routes (les URLs des pages ainsi que ce qu'il faut transmettre aux templates), enfin les Templates sont les pages HTML qui affichent et structurent les variables passées via notre Vue. Le modèle MVT est plutôt intuitif et ressemble au MVC utilisé dans le projet Java du S6. 
-Comme spécifié précédemment le Modèle est celui-ci qui contient le code de notre base de données et les méthodes associées à celle-ci. Dans mon projet j'ai utilisé l'ORM (Object Relational Mapping) SQLAlchemy qui me pert de coder d'écrire mes requêtes et de définir mes tables de base de données directement en Python tout en me basant sur une base de données utilisant des dialectes de SQLite. \textit{Voir figure 3.}
+Comme spécifié précédemment le Modèle est celui qui contient le code de notre base de données et les méthodes associées à celle-ci. Dans mon projet j'ai utilisé l'ORM (Object Relational Mapping) SQLAlchemy qui me permet d'écrire mes requêtes et de définir mes tables de base de données directement en Python tout en me basant sur une base de données utilisant les mécanismes de SQLite. \textit{Voir figure 3.}
 
 \begin{figure}[h]
     \centering
@@ -193,7 +193,7 @@ Comme spécifié précédemment le Modèle est celui-ci qui contient le code de 
     \label{fig:ex_models}
 \end{figure}
 
-La Vue est là où sont définies nos routes, nos URLs. C'est celles-ci qui font le lien entre la base de données et les templates. Elles exécutent les requêtes définies dans le Modèle et passent leurs résultats aux templates. Elle fait aussi le lien entre les autres classes (comme celles définies pour les formulaires) et les templates correspondantes. \textit{Voir figure 4.}
+La Vue est là où sont définies nos routes, nos URLs. C'est la Vue qui fait le lien entre la base de données et les templates. Elles exécutent les requêtes définies dans le Modèle et passent leurs résultats aux templates. Elle fait aussi le lien entre les autres classes (comme celles définies pour les formulaires) et les templates correspondantes. \textit{Voir figure 4.}
 
 \begin{figure}[h]
     \centering
@@ -216,7 +216,7 @@ En ce qui concerne tous les formulaires de saisie, j'ai utilisé \textbf{Flask W
 
 \clearpage
 
-Les templates quand à elles sont des pages HTML qui représentent ce que la Vue leur transmet. Elles sont très pratiques car il y a un système d'héritage ce qui permet de ne pas répéter plusieurs morceaux de code identiques. On peut définir les blocs de code à inclure dans une autre template via \textbf{ \{\% block content \%\} \{\%endblock\%\}}. \textit{Voir figure 6}. 
+Les templates quand à elles sont des pages HTML qui représentent ce que la Vue leur transmet. Elles sont très pratiques car il y a un système d'héritage ce qui permet de ne pas répéter plusieurs morceaux de code identiques. On peut définir les blocs de code à inclure dans une autre template via \textbf{ \{\% block content \%\} \{\%endblock\%\}} et inclure un bloc de code via \textbf{ \{\% include 'file.html' \%\} }. \textit{Voir figure 6}. 
 
 \begin{figure}[h]
     \centering
@@ -335,7 +335,7 @@ J'ai d'abord dû rassembler des ressources pertinentes pour mon auto-formation. 
 
 
 \textbf{Collecte des données d'entraînement et de test} \\
-Une fois avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cet aspect en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutenberg. J'ai donc récolté une collection de ebooks classiques en français.
+Une fois après avoir acquis quelques connaissances j'ai commencé par réaliser mon jeu de données. Cette partie était toute nouvelle pour moi car nous n'avons jamais abordé cet aspect en cours de communication langagière (les data-sets nous étaient toujours fournis). J'ai donc réalisé du Webscraping sur les ressources disponibles sur le site Gutenberg. J'ai donc récolté une collection de ebooks classiques en français.
 J'ai également réalisé des requêtes sur la collection de données WikiData et Dbpedia grâce au wrapper Python SPARQL (pour Dbpedia) et au wrapper WPTools (pour Wikipedia). \\
 En effet Dbpedia et Wikipedia sont des encyclopédies libres qui mettent à disposition les ressources entrées par les utilisateurs. Elles sont structurées selon le modèle RDF. C'est à dire que les ressources présentes sur ses sites sont organisées de façon structurée. Par exemple, chaque page Dbpedia est composée d'un \textbf{title}, d'un \textbf{label}, etc. Cette structure va nous permettre de réaliser des requêtes très facilement et de n'extraire que le contenu dont nous avons besoin. \\
 
@@ -380,7 +380,7 @@ Parmi les modèles disponibles sur le \textbf{\href{https://huggingface.co/model
 \textbf{Entraînement et analyse des résultats} \\
 \textit{Attention ! Cette partie de mon stage est toujours en cours !}
 
-Une fois choisi, il est temps de passer à l'entraînement du modèle. Je possède donc un jeu de données d'entraînement et c'est à partir de celles-ci que je vais pouvoir \textit{fine-tune} mon modèle. Je vais donc devoir trouver les bons paramètres à utiliser pour obtenir une \textit{accuracy} (probabilité que la réponse donnée par le modèle soit juste) élevée mais aussi pour avoir un temps d'exécution décent. \\ 
+Une fois choisi, il est temps de passer à l'entraînement du modèle. Je possède donc un jeu de données d'entraînement et c'est à partir de celles-ci que je vais pouvoir \textit{fine-tune} mon modèle. Je vais donc devoir trouver les bons paramètres à utiliser pour obtenir une \textit{accuracy} (probabilité que la réponse donnée par le modèle soit juste) élevée mais aussi pour avoir un temps d'exécution pas trop long. \\ 
 
 \textbf{Tests} \\
 Une fois mon modèle satisfaisant je vais pouvoir passer mon jeu de données test au modèle. Je vais m'assurer que les résultats obtenus sont ceux attendus et je vais ajuster encore une fois mes paramètres pour voir si je peux obtenir de meilleurs résultats.  
@@ -390,7 +390,7 @@ Une fois mon modèle satisfaisant je vais pouvoir passer mon jeu de données tes
 
 Dans l’ensemble, la réalisation des interfaces de l’exerciseur s’est plutôt bien passée. Même si j’ai rencontré quelques embûches, le temps passé sur une difficulté n’a jamais été très long. De plus, le fait d’avoir plusieurs tâches à faire en parallèle m’a permis de ne pas "rester bloquée" sur la tâche qui me donnait du fil à retordre. \\
 
-Une des difficultés majeures fut la réalisation de la base de données. Le modèle conçu précédemment ne convenait plus tout à fait à l'idée que nous nous faisions de l’exerciseur. En effet, l'ingénieur précédent avait imaginé certaines fonctionnalité comme la \textit{gamification} (l'apprentissage par le jeu) des exercices, la possibilité d'obtenir des récompenses au nombre d'exercices réalisés, etc. Certaines interfaces étaient un petit peu désuètes et il fallait un peu les restructurer.   
+Une des difficultés majeures fut la réalisation de la base de données. Le modèle conçu précédemment ne convenait plus tout à fait à l'idée que nous nous faisions de l’exerciseur. En effet, l'ingénieur précédent avait imaginé certaines fonctionnalités comme la \textit{gamification} (l'apprentissage par le jeu) des exercices, la possibilité d'obtenir des récompenses au nombre d'exercices réalisés, etc. Certaines interfaces étaient un petit peu désuètes et il fallait un peu les restructurer.   
 De plus, le fichier contenant la base de données n’était pas commenté/documenté, il fallait donc interpréter soi-même certains champs définis par l’ingénieur précédent.  De plus, sans "client" avec lequel discuter il est plus compliqué de définir les besoins des élèves et enseignants qui vont utiliser la plateforme. \\
 
 Une interface a été plus compliquée à imaginer et à coder que les autres, l'interface de l'analyse d'un texte par l'analyseur. En effet je me suis inspirée de l'interface réalisée par l'ingénieur précédent mais j'ai souhaité remodeler quelques aspects. Cette interface nécessite de garder une base de code commune mais possède de nombreuses fonctionnalités et doit donc être très modulable. J'ai donc dû jouer sur l'utilisation de différents paramètres dans les routes. Mais la difficulté principale reste le fait de ne pas pouvoir tester avec de vraies données ce que l'analyseur nous renvoie. Je pense que l'implémentation que j'ai réalisée sera sujette à encore nombreux changements quand l'analyseur sera stabilisé. 
@@ -398,11 +398,11 @@ Une interface a été plus compliquée à imaginer et à coder que les autres, l
 \subsection{Améliorations possibles}
 À l’heure où j’écris ce rapport, mon stage n’est pas encore terminé. Je peux donc encore continuer à améliorer mon travail. Cependant je vois quelques points que je n’aurais pas le temps d’aborder. \\
 
-\textbf{L’internationalisation} Dans la version actuelle, notre exerciseur est uniquement en français. J’ai voulu réaliser une version anglaise de l’interface à l’aide de Babel Flask. Ce plugin Flask permet, à partir de Strings balisée, de générer un fichier .po qui sert de dictionnaire pour les termes à traduire. Cependant je me suis rendue compte que ce plugin ne me serait pas d’une grande aide. En effet les phrases balisées doivent être des Strings "brutes" et non contenues dans une variable. Il faudrait donc un autre plugin ou une autre solution pour traduire nos interfaces mais que celles-ci restent également facile à maintenir. \\
+\textbf{L’internationalisation :} Dans la version actuelle, notre exerciseur est uniquement en français. J’ai voulu réaliser une version anglaise de l’interface à l’aide de Babel Flask. Ce plugin Flask permet, à partir de Strings balisée, de générer un fichier .po qui sert de dictionnaire pour les termes à traduire. Cependant je me suis rendue compte que ce plugin ne me serait pas d’une grande aide. En effet les phrases balisées doivent être des Strings "brutes" et non contenues dans une variable. Il faudrait donc un autre plugin ou une autre solution pour traduire nos interfaces mais que celles-ci restent également facile à maintenir. \\
 
-\textbf{L'analyse des textes}  Compte tenu de la date de rendu de ce rapport, je n'ai pas fini de travailler sur la partie NLP. De plus, cette partie est plus compliquée à appréhender pour moi et nous ne sommes pas sûrs d'obtenir des résultats satisfaisants à la date de fin de mon stage. \\
+\textbf{L'analyse des textes :}  Compte tenu de la date de rendu de ce rapport, je n'ai pas fini de travailler sur la partie NLP. De plus, cette partie est plus compliquée à appréhender pour moi et nous ne sommes pas sûrs d'obtenir des résultats satisfaisants à la date de fin de mon stage. \\
 
-\textbf{Avoir un retour "utilisateur"} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa facilité d'utilisation. 
+\textbf{Avoir un retour "utilisateur" :} L'application disponible actuellement n'a pas vraiment été testée par un enseignant (et encore moins par un élève). Au cours de mon développement j'ai utilisé des valeurs factices pour remplir ma base de données et avoir une idée de ce à quoi mon interface va ressembler. Cependant je n'ai pas eu de vrai retours sur l'ergonomie de mon interface ainsi que sa facilité d'utilisation. 
 Un autre point intéressant à aborder serait que notre interface soit utilisable par le plus grand nombre, par conséquent qu'elle comporte des modules \textit{d'accessibilité} (pour les malvoyants par exemple). 
 
 
